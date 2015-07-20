@@ -1,6 +1,0 @@
-- after projecteuler start writing software for trading and modeling using c++ and python
-- become master in c++ and python, move to london and earn fortune
-
-- my technology stack
-* c++, python, matlab
-data analysis + network programming (need special courses may be)
