@@ -24,6 +24,17 @@ template <class X> void print_set(set<X> st) {
 }
 
 int main ()  {
+	set<int> setss;
+	int kmax = 3;
+	for (int cnt = 1; cnt <= 100; cnt++) {
+		for (int k = 2; k <= kmax; k++) {
+			if (setss.find(k*cnt) != combs.end()) {
+				cout << k*cnt << " is already in the list: a = " << i << "; b = " << j << endl;
+			}
+			set2.insert(k*cnt);
+		}
+	}
+
 	set<int> set2;
 	int kmax = 3;
 	for (int cnt = 1; cnt <= 2; cnt++) {
@@ -70,17 +81,17 @@ int main ()  {
 	long long a = 100, b = 3;
 	set<long long> combs;
 	for (long long i = 2; i <= a; i++) {
-	//	cout << "i = " << i << endl;
-		long long prod = 1;
+		long long prod = i;
 		for (long long j = 2; j <= b; j++) {
-		//	cout << "j = " << j << endl;
-		//	cout << "prod = " << prod << endl;
 			prod *= i;
+			if (combs.find(prod) != combs.end()) {
+				cout << prod << " is already in the list: a = " << i << "; b = " << j << endl;
+			}
 			combs.insert(prod);
 		}
+		int ins;
 	}
 	cout << "combs.size() = " << combs.size() << endl;
-
 	cout << "-------------------------" << endl;	
 	print_set(combs);
 }

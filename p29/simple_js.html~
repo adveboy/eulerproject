@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function f(a) {
+	return function(x) {
+		return a;
+	};
+}
+g = f(a);
+</script>
+</head>
+
+<body>
+
+<p>When you click "Try it", a function will be called.</p>
+<p>The function will display a message.</p>
+
+<button onclick="g(a)">Try it</button>
+
+<p id="demo"></p>
+
+</body>
+</html>
+
