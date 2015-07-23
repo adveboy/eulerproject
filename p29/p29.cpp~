@@ -23,75 +23,27 @@ template <class X> void print_set(set<X> st) {
 	cout << endl;
 }
 
-int main ()  {
-	set<int> setss;
-	int kmax = 3;
-	for (int cnt = 1; cnt <= 100; cnt++) {
-		for (int k = 2; k <= kmax; k++) {
-			if (setss.find(k*cnt) != combs.end()) {
-				cout << k*cnt << " is already in the list: a = " << i << "; b = " << j << endl;
-			}
-			set2.insert(k*cnt);
-		}
-	}
 
-	set<int> set2;
-	int kmax = 3;
-	for (int cnt = 1; cnt <= 2; cnt++) {
-		for (int k = 2; k <= kmax; k++) {
-			set2.insert(k*cnt);
+int get_size(int bmax, int reps) {
+/*
+	see example in p29:
+	2^2, 2^3, ..., 2^5
+	4^2, 4^3, ..., 4^5
+	bmax here is 5 (max degree of a number), reps is 2 (2 and 4 are the issue)
+*/
+	set<int> st;
+	for (int cnt = 2; cnt <= bmax; cnt++) {
+		for (int k = 1; k <= reps; k++) {
+			st.insert(cnt*k);
 		}
 	}
-	print_set(set2);
-	int num2 = set2.size();
-	cout << set2.size() << endl;	
-	for (int cnt = 3; cnt <= 3; cnt++) {
-		for (int k = 2; k <= kmax; k++) {
-			set2.insert(k*cnt);
-		}
-	}
-	cout << "set2.size() = " << set2.size() << endl;	
-	print_set(set2);
-	int num3 = set2.size();
-	for (int cnt = 4; cnt <= 4; cnt++) {
-		for (int k = 2; k <= kmax; k++) {
-			set2.insert(k*cnt);
-		}
-	}
-	int num4 = set2.size();
-	cout << set2.size() << endl;
-	for (int cnt = 5; cnt <= 6; cnt++) {
-		for (int k = 2; k <= kmax; k++) {
-			set2.insert(k*cnt);
-		}
-	}
-	int num6 = set2.size();
-	cout << set2.size() << endl;	
-	print_set(set2);
-	cout << "result is " << 2 * (99 - (6*2 + 3 + 4 + 6)) + num6 + num4 + num3 + num2*6 << endl;
-	set<int> set0;
-	
-	for (int cnt = 1; cnt <= 5; cnt++) {
-		for (int k = 2; k <= 5; k++) {
-			set0.insert(k*cnt);
-		}
-	}
-	
-	cout << "-------------------------" << endl;
-	long long a = 100, b = 3;
-	set<long long> combs;
-	for (long long i = 2; i <= a; i++) {
-		long long prod = i;
-		for (long long j = 2; j <= b; j++) {
-			prod *= i;
-			if (combs.find(prod) != combs.end()) {
-				cout << prod << " is already in the list: a = " << i << "; b = " << j << endl;
-			}
-			combs.insert(prod);
-		}
-		int ins;
-	}
-	cout << "combs.size() = " << combs.size() << endl;
-	cout << "-------------------------" << endl;	
-	print_set(combs);
+	return st.size();
+}
+
+
+int main ()  {
+	int a = 100, b = 100;
+	int res = (b-1) * (99 - (6 + 4 + 3 + 6*2)) + get_size(100,6) + get_size(100,4) + get_size(100,3) + get_size(100,2)*6;
+	cout << "result is " << res << endl;
+	//	cout << "result is " << 4*2 + get_size(5,2) << endl;
 }
