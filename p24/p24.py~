@@ -1,0 +1,15 @@
+import time
+
+def permutationG(input, s):
+    if len(s) == len(input): yield s
+    for i in input:
+        if i in s: continue
+        s=s+i
+        for x in permutationG(input, s): yield x
+        s=s[:-1]
+
+start = time.time()
+a = list(permutationG('0123456789',''))
+end = time.time()
+print (end - start)
+print 

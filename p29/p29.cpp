@@ -32,18 +32,26 @@ int get_size(int bmax, int reps) {
 	bmax here is 5 (max degree of a number), reps is 2 (2 and 4 are the issue)
 */
 	set<int> st;
-	for (int cnt = 2; cnt <= bmax; cnt++) {
-		for (int k = 1; k <= reps; k++) {
-			st.insert(cnt*k);
+
+	cout << "bmax = " << bmax << "; reps = " << reps << endl;
+	for (int k = 1; k <= reps; k++) {
+		cout << "------------------------------------------------" << endl;
+		for (int cnt = 2; cnt <= bmax; cnt++) {
+			if (st.find(cnt*k) != st.end()) {
+				cout << "k = " << k << "; cnt = " << cnt << endl;
+			} else {
+				st.insert(cnt*k);
+			}
 		}
 	}
 	return st.size();
 }
 
 
-int main ()  {
+int main() {
 	int a = 100, b = 100;
 	int res = (b-1) * (99 - (6 + 4 + 3 + 6*2)) + get_size(100,6) + get_size(100,4) + get_size(100,3) + get_size(100,2)*6;
 	cout << "result is " << res << endl;
+// 	cout << "result is " << get_size(100,3) << endl;
 	//	cout << "result is " << 4*2 + get_size(5,2) << endl;
 }
