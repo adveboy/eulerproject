@@ -1,0 +1,5 @@
+reset
+g++ p104.cpp -o p104 -L/gmp_install/lib -lgmp
+#g++ clear_set.cpp -o p104 -L/gmp_install/lib -lgmp
+#g++ test.cpp -I/path/to/directory/that/contains/the/header -o test.exe
+./p104

@@ -1,0 +1,3 @@
+#reset
+g++ test_eigen.cpp -o test_eigen
+./test_eigen

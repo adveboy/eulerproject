@@ -1,0 +1,3 @@
+reset
+g++ p101.cpp -o p101
+./test_eigen
