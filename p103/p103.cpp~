@@ -110,7 +110,6 @@ vector<SS> sumelems(vector<int> arr) {
 				e.elems++;
 			}
 		}
-
 		ss.push_back(e);
 	}
 	return ss;
@@ -181,4 +180,5 @@ int main (int argc, char **argv) {
 	cout << "answer: " << endl;
 	print_array(min_vector);
 	return 0;
+	
 }
