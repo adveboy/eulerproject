@@ -179,6 +179,5 @@ int main (int argc, char **argv) {
 	vector<SS> ss = sumelems(lst);
 	cout << "answer: " << endl;
 	print_array(min_vector);
-	return 0;
-	
+	return 0;	
 }
